@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "AI DevTools Assistant",
+  "version": "1.0.0",
+  "description": "Web 前端智能开发者助手",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["http://localhost:3000/*"]
+}
